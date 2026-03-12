@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Veg Hotel - Premium Menu</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1f1f 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #ff6b35;
+            text-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .category-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #ff6b35;
+            margin: 30px 0 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1400px;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
+            border-radius: 20px;
+            padding: 20px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.15s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            cursor: pointer;
+            border: 1px solid rgba(255, 107, 53, 0.2);
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 50px rgba(255, 107, 53, 0.3);
+        }
+
+        .card-content {
+            transform: translateZ(30px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #fff;
+            text-transform: capitalize;
+        }
+
+        .card .description {
+            font-size: 0.85rem;
+            color: #aaa;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .price-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            transform: translateZ(20px);
+        }
+
+        .price {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #ff6b35;
+        }
+
+        .price span {
+            font-size: 0.9rem;
+            color: #888;
+            font-weight: 400;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transform: translateZ(40px);
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #128C7E, #075E54);
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+            transform: translateZ(50px) scale(1.02);
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff6b35;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transform: translateZ(50px);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #888;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            .category-title {
+                font-size: 1.5rem;
+            }
+            .menu-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>🍗 Premium Non-Veg Hotel</h1>
+        <p>Authentic Taste | Fresh Ingredients | Best Quality</p>
+    </div>
+
+    <h2 class="category-title">🔥 Chicken Special Menu 🔥</h2>
+
+    <div class="menu-container">
+        <!-- 1. Chicken Mumtaz -->
+        <div class="card" data-name="Chicken Mumtaz" data-price="₹270 / ₹540">
+            <span class="badge">Bestseller</span>
+            <div class="card-content">
+                <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6f54262?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Chicken Mumtaz">
+                <h2>Chicken Mumtaz</h2>
+                <p class="description">Rich & creamy gravy with aromatic spices</p>
+                <div class="price-container">
+                    <div class="price">₹270 <span>/ ₹540</span></div>
+                </div>
+                <button class="btn" onclick="orderOnWhatsApp('Chicken Mumtaz', '₹270 / ₹540')">Order on WhatsApp</button>
+            </div>
+        </div>
+
+        <!-- 2. Chicken Korma -->
+        <div class="card" data-name="Chicken Korma" data-price="₹180 / ₹360">
+            <div class="card-content">
+                <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Chicken Korma">
+                <h2>Chicken Korma</h2>
+                <p class="description">Traditional Mughlai style with cashew paste</p>
+                <div class="price-container">
+                    <div class="price">₹180 <span>/ ₹360</span></div>
+                </div>
+                <button class="btn" onclick="orderOnWhatsApp('Chicken Korma', '₹180 / ₹360')">Order on WhatsApp</button>
+            </div>
+        </div>
+
+        <!-- 3. Chicken Masala -->
+        <div class="card" data-name="Chicken Masala" data-price="₹180 / ₹360">
+            <div class="card-content">
+                <img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Chicken Masala">
+                <h2>Chicken Masala</h2>
+                <p class="description">Classic spicy chicken curry with onions & tomatoes</p>
+                <div class="price-container">
+                    <div class="price">₹180 <span>/ ₹360</span></div>
+                </div>
+                <button class="btn" onclick="orderOnWhatsApp('Chicken Masala', '₹180 / ₹360')">Order on WhatsApp</button>
+            </div>
+        </div>
+
+        <!-- 4. Chicken Stew -->
+        <div class="card" data-name="Chicken Stew" data-price="₹180 / ₹360">
+            <div class="card-content">
+                <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Chicken Stew">
+                <h2>Chicken Stew</h2>
+                <p class="description">Coconut milk based gravy with tender chicken</p>
+                <div class="price-container">
+                    <div class="price">₹180 <span>/ ₹360</span></div>
+                </div>
+                <button class="btn" onclick="orderOnWhatsApp('Chicken Stew', '₹180 / ₹360')">Order on WhatsApp</button>
+            </div>
+        </div>
+
+        <!-- 5. Handi Chicken -->
+        <div class="card" data-name="Handi Chicken" data-price="₹260 / ₹520">
+            <span class="badge">Special</span>
+            <div class="card-content">
+                <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Handi Chicken">
+                <h2>Handi Chicken</h2>
+                <p class="description">Slow cooked in traditional clay pot</p>
+                <div class="price-container">
+                    <div class="price">₹260 <span>/ ₹520</span></div>
+                </div>
+                <button class="btn" onclick="orderOnWhatsApp('Handi Chicken', '₹260 / ₹520')">Order on WhatsApp</button>
+            </div>
+        </div>
+
+        <!-- 6. Kadai Chicken -->
+        <div class="card" data-name="Kadai Chicken" data-price="₹280 / ₹560">
+            <div class="card-content">
+                <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Kadai Chicken">
+                <h2>Kadai Chicken</h2>
+                <p class="description">Spicy curry with bell peppers & kadai masala</p>
+                <div class="price-container">
+                    <div class="price">₹280 <span>/ ₹560</span></div>
+                </div>
+                <button class="btn" onclick="orderOnWhatsApp('Kadai Chicken', '₹280 / ₹560')">Order on WhatsApp</button>
+            </div>
+        </div>
+
+        <!-- 7. Butter Chicken -->
+        <div class="card" data-name="Butter Chicken" data-price="₹300 / ₹600">
+            <span class="badge">Popular</span>
+            <div class="card-content">
+                <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Butter Chicken">
+                <h2>Butter Chicken</h2>
+                <p class="description">Creamy tomato based curry with butter</p>
+                <div class="price-container">
+                    <div class="price">₹300 <span>/ ₹600</span></div>
+                </div>
+                <button class="btn" onclick="orderOnWhatsApp('Butter Chicken', '₹300 / ₹600')">Order on WhatsApp</button>
+            </div>
+        </div>
+
+        <!-- 8. Chicken Mughlai -->
+        <div class="card" data-name="Chicken Mughlai" data-price="₹280 / ₹560">
+            <div class="card-content">
+                <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Chicken Mughlai">
+                <h2>Chicken Mughlai</h2>
+                <p class="description">Royal Mughlai style with saffron & dry fruits</p>
+                <div class="price-container">
+                    <div class="price">₹280 <span>/ ₹560</span></div>
+                </div>
+                <button class="btn" onclick="orderOnWhatsApp('Chicken Mughlai', '₹280 / ₹560')">Order on WhatsApp</button>
+            </div>
+        </div>
+
+        <!-- 9. Chicken Rara -->
+        <div class="card" data-name="Chicken Rara" data-price="₹270 / ₹540">
+            <div class="card-content">
+                <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Chicken Rara">
+                <h2>Chicken Rara</h2>
+                <p class="description">Traditional gravy with special spices</p>
+                <div class="price-container">
+                    <div class="price">₹270 <span>/ ₹540</span></div>
+                </div>
+                <button class="btn" onclick="orderOnWhatsApp('Chicken Rara', '₹270 / ₹540')">Order on WhatsApp</button>
+            </div>
+        </div>
+
+        <!-- 10. Chicken Afghani -->
+        <div class="card" data-name="Chicken Afghani" data-price="₹270 / ₹540">
+            <div class="card-content">
+                <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6f54262?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Chicken Afghani">
+                <h2>Chicken Afghani</h2>
+                <p class="description">Creamy cashew based gravy with mild spices</p>
+                <div class="price-container">
+                    <div class="price">
